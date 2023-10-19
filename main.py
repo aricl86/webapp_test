@@ -7,6 +7,7 @@ app = Flask(__name)
 
 # Azure PostgreSQL connection string
 connection_string = "postgresql+psycopg2://AdminDB:Aa1234567Aa1234567@isilgeodbdev.postgres.database.azure.com:5432/postgres"
+engine = create_engine(connection_string, timeout=60)
 
 @app.route('/')
 def map_view():
