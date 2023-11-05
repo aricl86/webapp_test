@@ -14,8 +14,8 @@ def map():
     # Save the map to an HTML file
     m.save('templates/map.html')
 
-    # Render the HTML file
     return render_template('map.html')
 
 if __name__ == '__main__':
-    app.run()
+    # Specify the port here, and set host to '0.0.0.0' for external access
+    app.run(host='0.0.0.0', port=8000)
