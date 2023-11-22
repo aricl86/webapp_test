@@ -3,7 +3,7 @@ import folium
 import geopandas as gpd
 from sqlalchemy import create_engine
 
-app = Flask(__name)
+app = Flask(__name__)
 
 # Azure PostgreSQL connection string
 connection_string = "postgresql+psycopg2://AdminDB:Aa1234567Aa1234567@isilgeodbdev.postgres.database.azure.com:5432/postgres"
