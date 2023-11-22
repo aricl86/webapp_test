@@ -42,7 +42,7 @@ def map_view():
     folium.LayerControl().add_to(m)
 
     # Save the map to an HTML file
-    m.save('templates/map.html')
+    m.save('map.html')
 
     return render_template('map.html')
 
