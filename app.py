@@ -56,12 +56,12 @@ def map_view():
         folium.LayerControl().add_to(m)
     
         # Save the map to an HTML file
-        file_path = os.path.join(os.path.dirname(__file__), 'map.html')
-        m.save(file_path)
+        #file_path = os.path.join(os.path.dirname(__file__), 'map.html')
+        #m.save(file_path)
 
-        logging.info(f"HTML file saved successfully at: {file_path}")
-    
-        return render_template('map.html')
+        #logging.info(f"HTML file saved successfully at: {file_path}")
+        return 'Map successfully generated'
+        #return render_template('map.html')
     except Exception as e:
         # Log the exception
         app.logger.error(f"An error occurred: {str(e)}")
