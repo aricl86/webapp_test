@@ -2,6 +2,8 @@ from flask import Flask, render_template
 import folium
 import geopandas as gpd
 from sqlalchemy import create_engine
+import os
+import logging
 
 app = Flask(__name__)
 
@@ -54,7 +56,10 @@ def map_view():
         folium.LayerControl().add_to(m)
     
         # Save the map to an HTML file
-        m.save('map.html')
+        file_path = os.path.join(os.path.dirname(__file__), 'map.html')
+        m.save(file_path)
+
+        logging.info(f"HTML file saved successfully at: {file_path}")
     
         return render_template('map.html')
     except Exception as e:
