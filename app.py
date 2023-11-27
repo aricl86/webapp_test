@@ -60,7 +60,10 @@ def map_view():
         #m.save(file_path)
 
         #logging.info(f"HTML file saved successfully at: {file_path}")
-        return 'Map successfully generated'
+
+        map_html = m._repr_html_()
+        return map_html
+        #return 'Map successfully generated'
         #return render_template('map.html')
     except Exception as e:
         # Log the exception
