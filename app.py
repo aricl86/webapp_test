@@ -8,6 +8,17 @@ app = Flask(__name__)
 # Azure PostgreSQL connection string
 connection_string = "postgresql+psycopg2://AdminDB@isilgeodbdev:Aa1234567Aa1234567@isilgeodbdev.postgres.database.azure.com:5432/postgres"
 
+@app.route('/test_db_connection')
+def test_db_connection():
+    try:
+        engine = create_engine(connection_string)
+        conn = engine.connect()
+        conn.close()
+        return jsonify({'status': 'success', 'message': 'Database connection successful'})
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': f'Database connection failed: {str(e)}'})
+
+
 @app.route('/')
 def map_view():
     try:
@@ -55,4 +66,4 @@ def map_view():
         abort(500)
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
