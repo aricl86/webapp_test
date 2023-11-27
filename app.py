@@ -14,9 +14,9 @@ def test_db_connection():
         engine = create_engine(connection_string)
         conn = engine.connect()
         conn.close()
-        return jsonify({'status': 'success', 'message': 'Database connection successful'})
+        return 'Database connection successful'
     except Exception as e:
-        return jsonify({'status': 'error', 'message': f'Database connection failed: {str(e)}'})
+        return f'Database connection failed: {str(e)}'
 
 
 @app.route('/')
